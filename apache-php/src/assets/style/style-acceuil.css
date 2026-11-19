@@ -1,0 +1,77 @@
+/* 
+PALETTE DE COULEUR : 
+#400101 : bordeau 
+#BF1717 : rouge foncé
+#D93636 : rouge clair
+#1A150F : noir 
+#F9F6EF : blanc
+
+*/
+
+
+
+/* Structure de la page : différentes boîtes, leur couleurs et leur positionnement*/
+
+html{
+    background-color: #1A150F;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-rows: 200px 1fr 100px;
+}
+
+header{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+footer{
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+
+header, footer{
+    margin-top: 5px;
+    margin-bottom:5px;
+    margin-left:3px;
+    margin-right:3px;
+
+    background: linear-gradient(#BF1717, #D93636);
+    border-radius: 2px;
+    box-shadow: 1px 1px 10px #1A150F;
+}
+
+#inventory{
+    grid-row: 2;
+    grid-column: 2;
+
+    margin-top: 5px;
+    margin-bottom:5px;
+    margin-left:3px;
+    margin-right:3px;
+
+    background-color: #F9F6EF;
+
+    border : ridge 5px #400101;
+    border-radius: 2px;
+
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px black;
+}
+
+#map {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+/* Paramètres des textes */
+html{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #1A150F;
+}
+
+h1{
+    font-size: 5em;
+}
