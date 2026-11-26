@@ -13,7 +13,7 @@ $link = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pa
 if (!$link) {
     die('Erreur de connexion');
 } else {
-    echo 'Connexion BDD fonctionne !';
+    //echo 'Connexion BDD fonctionne !';
 }
 Flight::set('db', $link);
 
