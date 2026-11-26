@@ -63,6 +63,7 @@ header, footer{
 #map {
     grid-row: 2;
     grid-column: 1;
+    height: 500px;
 }
 
 /* Paramètres des textes */
