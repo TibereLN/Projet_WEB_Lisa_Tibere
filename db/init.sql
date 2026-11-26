@@ -10,6 +10,6 @@ CREATE TABLE points (
 
 -- Insérer des données exemples
 INSERT INTO points (name, geom) VALUES
-('Paris', ST_SetSRID(ST_MakePoint(2.3522, 48.8566), 4326)),
-('Lyon', ST_SetSRID(ST_MakePoint(4.8357, 45.7640), 4326)),
-('Marseille', ST_SetSRID(ST_MakePoint(5.3698, 43.2965), 4326));
+('Montmartre', ST_SetSRID(ST_MakePoint(2.3401192860050712, 48.88629639918976), 4326)),
+('Chateau de Champs', ST_SetSRID(ST_MakePoint(2.6038392671734214, 48.855380568480705), 4326)),
+('Bastille', ST_SetSRID(ST_MakePoint(2.369255597837038, 48.853072871652714), 4326));
