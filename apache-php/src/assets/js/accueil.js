@@ -8,10 +8,10 @@ var map = new ol.Map({
     }),
 
     layers: [
-        // Choix du fond de carte
         new ol.layer.Tile({
             source: new ol.source.TileWMS({
                 url: 'https://data.geopf.fr/wms-r/wms',
+                // Choix du fond de carte
                 params: {
                     'LAYERS': 'BNF-IGNF_GEOGRAPHICALGRIDSYSTEMS.CASSINI',
                     'FORMAT': 'image/png',
@@ -35,7 +35,12 @@ var points = new ol.layer.Vector({
         url: urlPoints,
         format: new ol.format.GeoJSON(),
     }),
+    // Mise en place du style des pts
+    style: new ol.style.Style({
+        image: new ol.style.Icon({
+            src: '/assets/image/canon.png',
+            scale: 0.1,
+        }),
+    }),
 });
 map.addLayer(points);
-
-
