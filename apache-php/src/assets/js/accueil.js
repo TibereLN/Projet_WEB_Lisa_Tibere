@@ -42,9 +42,13 @@ Vue.createApp({
                 url: urlPoints,
                 format: new ol.format.GeoJSON(),
             }),
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    src: '/assets/image/canon.png',
+                    scale: 0.1,
+                }),
+            }),
         });
-        map.addLayer(points);
-
 
         // Récupération du premier objet avec une requête fetch à index.php qui nous renvoie l'objet situé dans la base de données
         fetch('/api/objets')
