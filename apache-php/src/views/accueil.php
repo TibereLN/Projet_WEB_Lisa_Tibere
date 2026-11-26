@@ -9,8 +9,9 @@
 
     <!-- Librairie OpenLayers -->
     <link rel="stylesheet" href="https://unpkg.com/ol/ol.css">
-    <script src="https://unpkg.com/ol/dist/ol.js"></script>
-    
+    <script src="https://unpkg.com/ol/dist/ol.js"></script> 
+    <!-- Vue  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
@@ -32,4 +33,5 @@
 
 </body>
 <script src="http://localhost:1234/assets/js/accueil.js"></script>
+<script src="assets/js/javascript_vue.js"></script>
 </html>
