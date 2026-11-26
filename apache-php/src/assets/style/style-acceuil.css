@@ -8,7 +8,6 @@ PALETTE DE COULEUR :
 */
 
 
-
 /* Structure de la page : différentes boîtes, leur couleurs et leur positionnement*/
 
 html{
@@ -53,7 +52,7 @@ header, footer{
 
     background-color: #F9F6EF;
 
-    border : ridge 5px #400101;
+    border : ridge 10px #BF1717;
     border-radius: 2px;
 
     box-sizing: border-box;
