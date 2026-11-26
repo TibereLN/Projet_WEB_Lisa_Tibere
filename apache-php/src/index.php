@@ -1,27 +1,40 @@
 <?php
 
-declare(strict_types=1);
+/*Session*/
+session_start();
 
-require_once 'flight/Flight.php';
+require 'flight/autoload.php';
+
+include('bdd.php');
+
+
+
+//Empêche flight de gérer les erreurs, laisse le serveur Apache/PHP le faire
+Flight::set('flight.handle_errors', false);
 
 Flight::route('/', function() {
     Flight::render('accueil');
 });
 
-Flight::route('/test-db', function () {
-    $host = 'db';
-    $port = 5432;
-    $dbname = 'mydb';
-    $user = 'postgres';
-    $pass = 'postgres';
+Flight::route('/mysql', function() {
+    Flight::render('accueil');
+});
 
-    // Connexion BDD
-    $link = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass");
-
-    $sql = "SELECT * FROM points";
-    $query = pg_query($link, $sql);
-    $results = pg_fetch_all($query);
-    Flight::json($results);
+Flight::route('GET /objets', function () {
+    $link = Flight::get('db');
+    
+    if (isset($_GET['id'])) {
+        $sql = "SELECT * FROM objets WHERE id = " . $_GET['id'];
+        $query = pg_query($link, $sql);
+        $results = pg_fetch_all($query);
+        Flight::json($results);
+    }
+    else {
+        $sql = "SELECT * FROM objets";
+        $query = pg_query($link, $sql);
+        $results = pg_fetch_all($query);
+        Flight::json($results);
+    }    
 });
 
 Flight::start();

@@ -91,3 +91,5 @@ docker compose exec -t db pg_dump --inserts -U postgres -d mydb > "./db/backup.s
 
 - un dossier `./geoserver-workspaces` est créé pour les données des workspaces GeoServer
 - un fichier `./db/backup.sql` est créé pour un dump de la BDD
+
+API : Expliquez et justifiez votre implémentation dans le README
