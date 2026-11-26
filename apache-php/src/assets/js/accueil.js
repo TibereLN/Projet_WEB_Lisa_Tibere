@@ -32,6 +32,20 @@ Vue.createApp({
             ]
         });
 
+        //--------------------------------------------------- Affichage des points ---------------------------------------------------------
+
+        // Lien vers la base de donnée du geoserver
+        let urlPoints = 'http://localhost:8080/geoserver/objets/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=objets%3Apoints&outputFormat=application%2Fjson&maxFeatures=50';
+
+        var points = new ol.layer.Vector({
+            source: new ol.source.Vector({
+                url: urlPoints,
+                format: new ol.format.GeoJSON(),
+            }),
+        });
+        map.addLayer(points);
+
+
         // Récupération du premier objet avec une requête fetch à index.php qui nous renvoie l'objet situé dans la base de données
         fetch('/api/objets')
         .then(function (reponseHttp) {
@@ -45,3 +59,6 @@ Vue.createApp({
         });
     },
 }).mount('#interaction');
+
+
+
